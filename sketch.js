@@ -30,7 +30,7 @@ let radio = 640 / 480
 let waitTime = 5;
 let waitTimeFuncVar;
 
-let nextStageTime = 100;
+let nextStageTime = 110;
 let nextStageTimeVar;
 
 let test1;
@@ -185,8 +185,7 @@ function countMovement() {
 
         switch (String(stage)) {
             case '0':
-            case '1':
-                if (leftKnee.confidence < confidenceOffset || rightKnee.confidence < confidenceOffset) {
+                 if (leftKnee.confidence < confidenceOffset || rightKnee.confidence < confidenceOffset) {
                     break;
                 }
                 
@@ -196,6 +195,21 @@ function countMovement() {
                 if (rightKnee.y > leftKnee.y + poseOffset) {
                     stageResult[0] += 1
                 } else if (leftKnee.y > rightKnee.y + poseOffset) {
+                    stageResult[1] += 1
+                }
+                                
+                break;
+            case '1':
+                if (leftKnee.confidence < confidenceOffset || rightKnee.confidence < confidenceOffset) {
+                    break;
+                }
+                
+                test1 = leftKnee.confidence; // test
+                test2 = rightKnee.confidence; // test
+                
+                if (rightElbow.y + poseOffset > rightWrist.y ) {
+                    stageResult[0] += 1
+                } else if (rightWrist.y > rightElbow.y + poseOffset) {
                     stageResult[1] += 1
                 }
                                 
