@@ -130,7 +130,7 @@ function draw() {
     // text('CENTER', 0, 37, width);
     fill(0, 102, 255);
     if (waitTime > -1) {
-        textSize(128);
+        textSize(228);
         textAlign(CENTER, CENTER);
         // fill(0, 102, 255);
         text(waitTime, 0, height / 2, width);
@@ -294,7 +294,7 @@ function drawSkeleton() {
         for (let j = 0; j < skeleton.length; j++) {
             let partA = skeleton[j][0];
             let partB = skeleton[j][1];
-            stroke(255, 0, 0);
+            stroke(0, 0, 255);
             line(partA.position.x, partA.position.y, partB.position.x, partB.position.y);
         }
     }
