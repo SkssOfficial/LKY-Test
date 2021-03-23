@@ -33,9 +33,9 @@ let waitTimeFuncVar;
 let nextStageTime = 111;
 let nextStageTimeVar;
 
-let test1;
+/*let test1;
 let test2;
-let test3;
+let test3;*/ dubug reading/cofidence score/Global variable
 
 // function preload() {
 //   imgLogo = loadImage('assets/logo.png');
