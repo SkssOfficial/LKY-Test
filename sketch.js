@@ -191,8 +191,8 @@ function countMovement() {
                     break;
                 }
                 
-                test1 = leftKnee.confidence; // test
-                test2 = rightKnee.confidence; // test
+                /*test1 = leftKnee.confidence; // test
+                test2 = rightKnee.confidence;*/ // test
                 
                 if (rightKnee.y > leftKnee.y + poseOffset) {
                     stageResult[0] += 1
