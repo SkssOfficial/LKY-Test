@@ -149,20 +149,20 @@ function draw() {
                 stopCounting = false;
             }
         }
-        textSize(40);
+        textSize(65);
         textAlign(LEFT, TOP);
         // fill(255, 0, 0);
-        text("Stage: " + String(parseInt(stage) + 1), 25, 30);
-        text("Count: " + stageResult[0] + ", " + stageResult[1], 25, 80);
-        text("Mark: " + Math.max(stageResult[0], stageResult[1]) + '/8', 25, 130);
-        text("Time Left: " + nextStageTime, 25, 180)
+        text("Stage: " + String(parseInt(stage) + 1), 15, 10);
+        text("Count: " + stageResult[0] + ", " + stageResult[1], 15, 80);
+        text("Mark: " + Math.max(stageResult[0], stageResult[1]) + '/8', 15, 160);
+        text("Time Left: " + nextStageTime, 15, 240)
         
         
         /*text("Count: " + stageResult[0] + ", " + stageResult[1], 25, 30);
         text("Mark: " + Math.max(stageResult[0], stageResult[1]) + '/8', 25, 80);*/
         
-        text("Left confidence: " + test1, 25, 230);   // Debuging reading
-        text("Right confidence: " + test2, 25, 280);   // Debuging reading
+        /*text("Left confidence: " + test1, 25, 230);   // Debuging reading
+        text("Right confidence: " + test2, 25, 280);   // Debuging reading8/
         /*test("leftKnee: " + test2, 25, 80);
         text("rightKnee: " + test3, 25, 130);
         */
@@ -224,9 +224,9 @@ function countMovement() {
                 test1 = leftKnee.confidence; // test
                 test2 = rightKnee.confidence; // test
                 
-                if (rightElbow.y + poseOffset > rightWrist.y ) {
+                if (rightKnee.y > rightWrist.y ) {
                     stageResult[0] += 1
-                } else if (rightWrist.y > rightElbow.y + poseOffset) {
+                } else if (leftKnee.y > leftWrist.y ) {
                     stageResult[1] += 1
                 }
                                 
