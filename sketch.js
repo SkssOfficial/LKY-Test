@@ -209,9 +209,9 @@ function countMovement() {
                 test1 = leftKnee.confidence; // test
                 test2 = rightKnee.confidence; // test
                 
-                if (rightElbow.y + poseOffset > rightWrist.y ) {  //poseoffset 影響的距離 est. 6cm?
+                if (rightWrist.y + poseOffset > rightshoulder.y ) {  //poseoffset 影響的距離 est. 6cm?
                     stageResult[0] += 1
-                } else if (leftElbow.y + poseOffset > leftWrist.y ) {
+                } else if (leftWrist.y + poseOffset > leftshoulder.y ) {
                     stageResult[1] += 1
                 }
                                 
