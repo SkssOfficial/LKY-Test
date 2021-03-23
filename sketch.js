@@ -14,7 +14,7 @@ let poses = [];
 let stage = 0;
 let stageResult = [0, 0]
 let poseOffset = 30
-let confidenceOffset = 0.1
+let confidenceOffset = 0.6
 let stopCounting = false
 
 let currentFrame = 0
@@ -182,6 +182,8 @@ function countMovement() {
         let leftElbow = pose.leftElbow;
         let rightWrist = pose.rightWrist;
         let rightElbow = pose.rightElbow;
+        let leftShoulder = pose.leftShoulder;
+        let rightShoulder = pose.rightShoulder;
 
         switch (String(stage)) {
             case '0':
@@ -200,6 +202,21 @@ function countMovement() {
                                 
                 break;
             case '1':
+                if (leftElbow.confidence < confidenceOffset || leftElbow.confidence < confidenceOffset) {
+                    break;
+                }
+                
+                test1 = leftKnee.confidence; // test
+                test2 = rightKnee.confidence; // test
+                
+                if (rightElbow.y + poseOffset > rightWrist.y ) {  //poseoffset 影響的距離 est. 6cm?
+                    stageResult[0] += 1
+                } else if (leftElbow.y + poseOffset > leftWrist.y ) {
+                    stageResult[1] += 1
+                }
+                                
+                break;
+            case '2':
                 if (leftKnee.confidence < confidenceOffset || rightKnee.confidence < confidenceOffset) {
                     break;
                 }
@@ -214,7 +231,6 @@ function countMovement() {
                 }
                                 
                 break;
-            case '2':
             case '4':
                 if (leftWrist.y > leftElbow.y + poseOffset && leftWrist.confidence > confidenceOffset && leftElbow.confidence > confidenceOffset) {
                     stageResult[0] += 1
