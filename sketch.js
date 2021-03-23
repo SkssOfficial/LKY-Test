@@ -35,7 +35,7 @@ let nextStageTimeVar;
 
 /*let test1;
 let test2;
-let test3;*/ dubug reading/cofidence score/Global variable
+let test3;*/ //dubug reading/cofidence score/Global variable
 
 // function preload() {
 //   imgLogo = loadImage('assets/logo.png');
@@ -206,8 +206,8 @@ function countMovement() {
                     break;
                 }
                 
-                test1 = leftKnee.confidence; // test
-                test2 = rightKnee.confidence; // test
+                /*test1 = leftKnee.confidence; // test
+                test2 = rightKnee.confidence;*/ // test
                 
                 if (rightWrist.y + poseOffset > rightshoulder.y ) {  //poseoffset 影響的距離 est. 6cm?
                     stageResult[0] += 1
@@ -221,8 +221,8 @@ function countMovement() {
                     break;
                 }
                 
-                test1 = leftKnee.confidence; // test
-                test2 = rightKnee.confidence; // test
+                /*test1 = leftKnee.confidence; // test
+                test2 = rightKnee.confidence;*/ // test
                 
                 if (rightKnee.y > rightWrist.y ) {
                     stageResult[0] += 1
